@@ -1,0 +1,52 @@
+async def adventurecode(self, ctx):
+  Core.playerSet(self, rpg.find({"id": ctx.author.id}))
+  best = []
+  good = []
+  nothing = []
+  bad = []
+  worst = []
+  get_item = []
+  leftevent = random.choice((good, nothing, bad))
+  rightevent = random.choice((good, nothing, bad))
+  leftroad = Button(
+            style=ButtonStyle.gray,
+            emoji="⬅️",
+            label="左邊",
+            custom_id="left"
+            )
+  rightroad = Button(
+        style=ButtonStyle.gray,
+        emoji="➡️",
+        label="右邊",
+        custom_id="right"
+        )
+  road_button = ActionRow(leftroad, rightroad)
+  def check(inter):
+        return inter.author == ctx.author
+  mydate = {str(ctx.author.id):{"id":self.id, "bag": self.bag, "left":0, "right":0, "name":self.name, "pfp":self.pfp}}
+  for i in range(30):
+    try:
+        id = mydate[str(ctx.author.id)]["id"]
+        ownbag = mydate[str(ctx.author.id)]["bag"]
+        name = mydate[str(ctx.author.id)]["name"]
+        pfp = mydate[str(ctx.author.id)]["pfp"]
+        left = mydate[str(ctx.author.id)]["left"]
+        right = mydate[str(ctx.author.id)]["right"]
+
+        inter = await ctx.wait_for_button_click(check=check, timeout=40)
+        # Respond to the interaction
+        inter = await ctx.wait_for_button_click(check=check, timeout=40)
+        # Respond to the interaction
+        if inter.clicked_button.label=="左邊": left += 1 
+        else: right += 1
+
+        embed = discord.Embed(title = f'{self.name}的第 {right+right} 次選擇\n'+"-"*20, color = 0x8a8a8a)
+        embed.set_thumbnail(url = pfp)
+        embed.add_field(name=f"{0}",value=f"數量: {0}",inline=False)
+
+        get_item.append()
+
+        await inter.respond(content="", embed = embed, components=[road_button], type=7)
+    except asyncio.TimeoutError:
+          await ctx.delete()
+          return

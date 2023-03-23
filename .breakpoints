@@ -1,0 +1,20 @@
+{
+  "files": {
+    "cmds/bossCog.py": [
+      {
+        "id": "9dcc3af0-944f-476a-aa65-bd5393c4e44f",
+        "line": 18,
+        "version": 11942,
+        "index": 502
+      }
+    ],
+    "cmds/huntCog.py": [
+      {
+        "id": "f8c338b1-04b3-4962-a763-53b27ced0ad5",
+        "line": 652,
+        "version": 7369,
+        "index": 23069
+      }
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+openai
+discord
+dnspython
+pymongo[tls,srv]>=3.7.0b1
+random
+keep_alive
+discord.py
+dislash
