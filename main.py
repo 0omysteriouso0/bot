@@ -430,8 +430,8 @@ for cmdFile in os.listdir("./cmds"):
 keep_alive.keep_alive()
 try:
    print("okk")
-   bot.run("OTE2NTI5MDY0MjAwNzgxODI1.YareNQ.qKFtdvI0d3tuEdUmhr48tG7Ahw0")
+   bot.run("token")
 except discord.errors.HTTPException: 
   print("error")
   subprocess.call("kill 1", shell=True)
-  bot.run("OTE2NTI5MDY0MjAwNzgxODI1.YareNQ.qKFtdvI0d3tuEdUmhr48tG7Ahw0")
+  bot.run("token")
